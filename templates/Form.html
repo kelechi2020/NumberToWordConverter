@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Number To Word Converter</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://intercoolerreleases-leaddynocom.netdna-ssl.com/intercooler-1.1.1.min.js"></script>
+</head>
+
+<body>
+{% if number %}
+{% include 'result_display.html' %}
+{% else %}
+    <h3>Type In A Number You Wish To Convert To Words</h3>
+{% endif %}
+
+<form id='form' role='form' method="post" action="{% url 'submit' %}">
+{% csrf_token %}
+
+    <label for="number" class="col-form-label">Enter Number</label>
+    <input name="number"
+	       id="inputnumber"
+	       type="number"
+	       placeholder="Start typing here"
+	       ic-post-to="{% url 'search-ajax-submit' %}"
+	       ic-trigger-on="keyup changed"
+	       ic-trigger-delay="30ms"
+	       ic-target="#search-result-container"/>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<span id="search-result-container"></span>
+</body>
+</html>
