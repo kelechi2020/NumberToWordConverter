@@ -22,7 +22,7 @@ openpyxl==2.4.8
 Pillow==4.2.1
 psycopg2==2.7.3
 Pygments==2.2.0
-PyYAML==3.12
+PyYAML==5.4
 ratelim==0.1.6
 requests==2.18.2
 six==1.11.0
